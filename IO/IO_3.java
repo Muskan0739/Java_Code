@@ -17,7 +17,7 @@ public class IO_3 {
         while(i!=-1){
             System.out.print(i+ "----> ");
             System.out.println((char)i);
-            i= fr.read();
+            i= fr.read();//Reading every character of file one by one can be a lengthy task so instead use an character array to store all the information in the array and traverse it one by one// REFER TO NEXT CODE IO_4
         }
         }
 

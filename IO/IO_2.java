@@ -10,7 +10,7 @@ public class IO_2 {
         File f2= new File(f1, "Design2.txt");
         //f2.createNewFile();
         try{
-        FileWriter fw= new FileWriter(f2, true); /*Setting this as true so that new data can be appended in to the file. By default it is false which means every time you make changes in data it will over write on th eold data.*/
+        FileWriter fw= new FileWriter(f2, true); /*Setting this as true so that new data can be appended in to the file. By default it is false which means every time you make changes in data it will over write on the old data.*/
         fw.write("Heyoo ");
         fw.write("There! \n");
         fw.write("How are you? \n");
