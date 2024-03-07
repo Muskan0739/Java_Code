@@ -24,7 +24,7 @@ public class IO_8 {
        BufferedOutputStream bof=new BufferedOutputStream(fos);
        ObjectOutputStream oos= new ObjectOutputStream(bof);//TAKES OBJECT OF FOS
 
-       oos.writeObject(c);//CRUSHES DATA OF OBJECT INTO BINARY FORM df
+       oos.writeObject(c);//CRUSHES DATA OF OBJECT INTO BINARY FORM 
        oos.flush();
        oos.close();*/
 
