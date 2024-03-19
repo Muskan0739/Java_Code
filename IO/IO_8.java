@@ -3,7 +3,7 @@ import java.io.*;
 
 class Cricket implements Serializable {
     int run;
-    transient String name;
+    transient String name;//if you will use trnsient keyword then in deserialization the value will not be retained
 
     public Cricket(int run, String name){
         this.run=run;
@@ -18,9 +18,9 @@ class Cricket implements Serializable {
 
 public class IO_8 {
     public static void main(String[] args) throws Exception{
-      Cricket c= new Cricket(23, "Rohit");
+      /*Cricket c= new Cricket(23, "Rohit");
         //SERIALIZATION
-      /*FileOutputStream fos=new FileOutputStream("Design.txt");//wORKS AS A PIPE TO STORE DATA IN THE FILE
+      FileOutputStream fos=new FileOutputStream("Design.txt");
        BufferedOutputStream bof=new BufferedOutputStream(fos);
        ObjectOutputStream oos= new ObjectOutputStream(bof);//TAKES OBJECT OF FOS
 
@@ -31,8 +31,8 @@ public class IO_8 {
        // DESERIALIZATION
 
        FileInputStream fis=new FileInputStream("Design.txt");
-    //   BufferedInputStream bis=new BufferedInputStream(fis);
-       ObjectInputStream ois=new ObjectInputStream(fis);
+       BufferedInputStream bis=new BufferedInputStream(fis);
+       ObjectInputStream ois=new ObjectInputStream(bis);
 
        Cricket cr=(Cricket)ois.readObject();
        cr.disp();
