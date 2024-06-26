@@ -1,5 +1,7 @@
 import java.util.*;
 
+//Time Comlexity= O(n)= By substitution method
+//Space Complexity= O(n)- use of Stack Data Structure
 public class FactOfNum {
 
     public static int factNum(int n){
