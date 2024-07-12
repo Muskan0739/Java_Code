@@ -4,8 +4,8 @@ public class POEapproach2 {
 
     public static int power(int a, int b){
 
-        int result=0, mid=0;
-        int finalResult=0;
+        int result=0, mid=0, finalResult;
+        
 
         //Base case condition
         if(b==1){
@@ -17,14 +17,13 @@ public class POEapproach2 {
         else{
             mid=b/2;
             result= power(a,mid);
-            finalResult= result*result;
 
-            //Upgrading to new type
-            long Result=finalResult;
-
+            //THIS CAN STORE ONLY SMALL INTEGER VALUES IF YOU WANT THE POWER OF 2^32 YOU WILL NOT GET ANY OUTPUT
+            //TO FIND 2^32 YOU NEED TO USE BIGINTEGER 
+            finalResult=result*result;
+                    
             if(b%2!=0){
-                Result=finalResult*a;
-                return (int)Result;
+                return a*finalResult;
             }
             else{
                 return finalResult;
