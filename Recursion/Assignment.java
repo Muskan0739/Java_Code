@@ -1,29 +1,37 @@
 import java.util.*;
 
 public class Assignment{
+    public static boolean findElem(int arr[][], int target){
+        int n=arr[0].length;
+        int m= arr.length;
+        int low=0;
+        int high= m*n-1;
+        int midElem, midInd;
+    
+        while(low<high){
+            midInd=low+ (high-low)/2;
+            midElem= arr[midInd/n][midInd%n];
 
-    public static int Sum(int n){
-        int sum=0;
-
-        //BASE CASE CONDITION
-        if(n==0){
-            return n;
+            if(midElem==target){
+                return true;
+            }
+            else if(midElem<target){
+                low= midInd+1;
+            }
+            else{
+                high=midInd-1;          
+              }
+              
         }
-        //RECURSIVE METHOD CALL
-        else{
-            sum=n%10+ Sum(n/10);
-        }
-        return sum;
-    }
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        
-        System.out.println("Enter a number");
-        int n=sc.nextInt();
-        
-        int sum=Sum(n);
-
-        System.out.println("Sum of the digits of the given number is : "+ sum);
+        return false;
 
     }
+
+   public static void main(String[] args) {
+    int arr[][]={{1,2,3,4},{5,6,7,8}, {9,10,11,12}};
+    int target= 12;
+    boolean result= findElem(arr, target);
+    System.out.println(result);
+
+   }
 }
